@@ -1,6 +1,10 @@
 
 Feature: FlowChartMaker TestCases
 
+
+
+#Supported shapes:circle,rectangle,Diamond,RoundRectangle,Process,Hexagon
+
 @TC_1
 Scenario Outline: Creating flowchat based on process Start > Read A > Read B > Calculate C + A = B > Print C > End
 Given the user opens flowchart application 
