@@ -49,10 +49,15 @@ public class FlowChartMakerSteps extends BrowserFactory {
 		fc.verifyFlowChartPresent();
 	}
 
-	@And("the user delete flowchart and verify flowchat is available")
+	@And("the user delete flowchart and verify flowchat is not available")
 	public void deleteFlowChat() throws Exception {
 		FlowCharMakerPages fc = new FlowCharMakerPages(BrowserFactory.getDriver());
 		fc.deleteFlowchat();
 		fc.verifyFlowChartNotPresent();
+	}
+	
+	@And("the user verify text inside flowchart is correct")
+	public void verifyTextinsideShape() {
+		
 	}
 }

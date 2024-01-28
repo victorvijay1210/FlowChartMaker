@@ -20,7 +20,6 @@ public class ApplicationHooks extends BrowserFactory {
 
 	@AfterStep
 	public void stepWiseScreenshot(Scenario scenario) {
-
 		TakesScreenshot ts = (TakesScreenshot) BrowserFactory.getDriver();
 		byte[] src = ts.getScreenshotAs(OutputType.BYTES);
 		scenario.attach(src, "image/png", "stepwiseSC_" + new SimpleDateFormat("MMddyyyy_HH_mm_ss").format(new Date()));

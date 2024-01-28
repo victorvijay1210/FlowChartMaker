@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 "flowchartmaker.steps", "flowchartmaker.hooks"},
 
 monochrome = true, 
-tags ="@TC_1",
+tags ="@Flowchart_TC",
 dryRun =false,
 plugin = { "json:target/cucumber-report-html.json", 
 		"html:target/reports.html",
@@ -19,7 +19,7 @@ plugin = { "json:target/cucumber-report-html.json",
 public class TestRunner extends AbstractTestNGCucumberTests{	
 	
 	@Override
-    @DataProvider(parallel = false)
+    @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
         

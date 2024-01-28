@@ -12,12 +12,14 @@ import java.util.Set;
 
 import javax.swing.KeyStroke;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.WheelInput;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -145,6 +147,24 @@ public class BaseClass extends BrowserFactory {
 		act.doubleClick(element).perform();
 	}
 	
+	public void scrolltoElementbyAction(WebElement element) {
+		try {
+	
+			WheelInput.ScrollOrigin scrollOrigin = WheelInput.ScrollOrigin.fromElement(element);
+			new Actions(BrowserFactory.getDriver())
+			        .scrollFromOrigin(scrollOrigin, 0, 200)
+			        .perform();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void scrolltoParticularElement(WebElement element) {
+		new Actions(BrowserFactory.getDriver())
+        .scrollToElement(element)
+        .perform();
+	}
 	
 
 	//move to child window
@@ -299,6 +319,15 @@ public class BaseClass extends BrowserFactory {
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_DELETE);
         robot.keyRelease(KeyEvent.VK_DELETE);
+	}
+	
+	public void RoboteselectAll() throws Exception{
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+   
 	}
 
 	public  void typeTextWithRobot(String text) throws AWTException {
