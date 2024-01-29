@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 public class FlowChartMakerSteps extends BrowserFactory {
 
-	@Given("the user opens flowchart application")
+	@Given("the user opens the flowchart application")
 	public void User_Opens_Flowchart_Application() throws Exception {
 		startApp();
 		FlowCharMakerPages fc = new FlowCharMakerPages(BrowserFactory.getDriver());
@@ -17,7 +17,7 @@ public class FlowChartMakerSteps extends BrowserFactory {
 
 	}
 
-	@When("^the user draw a flowchart by picking up (.+) and (.+) and (.+) and (.+) and (.+) and (.+)$")
+	@When("^the user draws a flowchart by selecting (.+), (.+), (.+), (.+), (.+), and (.+)$")
 	public void userDrawsFlowchart(String shape_1, String shape_2, String shape_3, String shape_4, String shape_5,
 			String shape_6) {
 		FlowCharMakerPages fc = new FlowCharMakerPages(BrowserFactory.getDriver());
@@ -29,7 +29,7 @@ public class FlowChartMakerSteps extends BrowserFactory {
 		fc.clickShapes(shape_6);
 	}
 	
-	@When("^the user enter (.+) inside (.+) and (.+) inside (.+) and (.+) inside (.+) and (.+) inside (.+) and (.+) inside (.+) finally (.+) inside (.+)$")
+	@When("^the user enters (.+) inside (.+), (.+) inside (.+), (.+) inside (.+), (.+) inside (.+), (.+) inside (.+), and finally (.+) inside (.+)$")
 	public void userEnterText(String text_1, String shape_1, String text_2, String shape_2, String text_3,
 			String shape_3, String text_4, String shape_4, String text_5, String shape_5, String text_6, String shape_6)
 			throws Exception {
@@ -43,21 +43,22 @@ public class FlowChartMakerSteps extends BrowserFactory {
 		fc.enterTextInShapes(shape_6, text_6);
 	}
 
-	@Then("the user verify flowchart is created")
+	@Then("the user verifies that the flowchart is created")
 	public void verifyFlowChartIsAvaialble() {
 		FlowCharMakerPages fc = new FlowCharMakerPages(BrowserFactory.getDriver());
 		fc.verifyFlowChartPresent();
 	}
 
-	@And("the user delete flowchart and verify flowchat is not available")
+	@And("the user deletes the flowchart and verifies that the flowchart is not available")
 	public void deleteFlowChat() throws Exception {
 		FlowCharMakerPages fc = new FlowCharMakerPages(BrowserFactory.getDriver());
 		fc.deleteFlowchat();
 		fc.verifyFlowChartNotPresent();
 	}
 	
-	@And("the user verify text inside flowchart is correct")
-	public void verifyTextinsideShape() {
-		
+	@And("the user verifies that the text inside the flowchart shapes is correct")
+	public void verifyText() {
+		FlowCharMakerPages fc = new FlowCharMakerPages(BrowserFactory.getDriver());
+		fc.verifyTextinsideShapes();
 	}
 }

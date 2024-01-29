@@ -206,5 +206,60 @@ public class FlowCharMakerPages {
 
 	}
 	
+	public String getCircleText() {
+		bc.scrolltoElementbyAction(CircleText);
+		bc.actionsClick(CircleText);
+		editData();
+		bc.info(TextEditor.getText());
+		return TextEditor.getText();
+	}
+	
+	public String getCouldText() {
+		bc.scrolltoElementbyAction(cloudText);
+		bc.actionsClick(cloudText);
+		editData();
+		bc.info(TextEditor.getText());
+		return TextEditor.getText();
+	}
+	
+	public String getRoundRectText() {
+		bc.scrolltoElementbyAction(RoundRectText);
+		bc.actionsClick(RoundRectText);
+		editData();
+		bc.info(TextEditor.getText());
+		return TextEditor.getText();
+	}
+	
+	public String getDiamondText() {
+		bc.scrolltoElementbyAction(DiamondText);
+		bc.actionsClick(DiamondText);
+		editData();
+		bc.info(TextEditor.getText());
+		return TextEditor.getText();
+	}
+	
+	public String getHexoText() {
+		bc.scrolltoElementbyAction(HexoText);
+		bc.actionsClick(HexoText);
+		editData();
+		bc.info(TextEditor.getText());
+		return TextEditor.getText();
+	}
+	
+	public String getProcessText() {
+		bc.scrolltoElementbyAction(ProcessText);
+		bc.actionsClick(ProcessText);
+		editData();
+		bc.info(TextEditor.getText());
+		return TextEditor.getText();
+	}
+	
+
+	public void verifyTextinsideShapes() {
+		assertTrue(getCircleText().equalsIgnoreCase("Start"),"Text inside circle shape is not matching");
+		assertTrue(getCouldText().equalsIgnoreCase("Read A"),"Text inside cloud shape is not matching");
+		assertTrue(getHexoText().equalsIgnoreCase("End"),"Text inside diamond shape is not matching");
+	}
+	
 	
 }

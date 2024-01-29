@@ -137,7 +137,7 @@ public class BaseClass extends BrowserFactory {
 	//actionclick
 	public void actionsClick(WebElement element) {
 		Actions builder = new Actions(BrowserFactory.getDriver());
-		builder.moveToElement(element).click(element);
+		builder.moveToElement(element).click(element).build().perform();
 
 	}
     
