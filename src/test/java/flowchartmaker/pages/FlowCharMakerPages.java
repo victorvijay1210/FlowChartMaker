@@ -79,12 +79,15 @@ public class FlowCharMakerPages {
 	@FindBy(xpath = "//td[normalize-space()='Edit']")
 	public WebElement EditData;
 
-	@FindBy(xpath = "//div[@class='geDiagramContainer geDiagramBackdrop']")
+	@FindBy(xpath = "//div[@class='geDiagramContainer geDiagramBackdrop']//*[name()='svg']")
 	public WebElement Dashboard;
 
 	@FindBy(xpath = "//div[@class='geSprite geSprite-delete']")
 	public WebElement Delete;
 
+	@FindBy(xpath = "//td[normalize-space()='Select All']")
+	public WebElement SelectALL;
+	
 	public void clickDecideLater() {
 		bc.objFluentwaitclick(Decidelater, 5, 3);
 		MinimizeBoard();
@@ -137,8 +140,10 @@ public class FlowCharMakerPages {
 	}
 
 	public void deleteFlowchat() throws Exception {
-		bc.objFluentwaitclick(Dashboard, 5, 3);
-		bc.RoboteselectAll();
+		
+	
+		bc.actionsRightClick(Dashboard);
+		bc.objFluentwaitclick(SelectALL, 5, 3);
 		bc.objFluentwaitclick(Delete, 5, 3);
 
 	}

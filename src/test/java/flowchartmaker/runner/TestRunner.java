@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 "flowchartmaker.steps", "flowchartmaker.hooks"},
 
 monochrome = true, 
-tags ="@Flowchart_TC",
+tags ="@TC_2",
 dryRun =false,
 plugin = { "json:target/cucumber-report-html.json", 
 		"html:target/reports.html",

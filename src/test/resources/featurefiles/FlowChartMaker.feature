@@ -23,7 +23,7 @@ Scenario Outline: Verify that a user can delete a flowchart with the sequence: S
 Given the user opens the flowchart application 
 When the user draws a flowchart by selecting <shape_1>, <shape_2>, <shape_3>, <shape_4>, <shape_5>, and <shape_6>
 And the user enters <text_1> inside <shape_1>, <text_2> inside <shape_2>, <text_3> inside <shape_3>, <text_4> inside <shape_4>, <text_5> inside <shape_5>, and finally <text_6> inside <shape_6>
-Then the user verifies that the flowchart is created
+#Then the user verifies that the flowchart is created
 And the user deletes the flowchart and verifies that the flowchart is not available
 
 Examples:

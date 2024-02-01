@@ -217,7 +217,11 @@ public class BaseClass extends BrowserFactory {
 	}
 
 
-	
+	//actionclick
+		public void actionsRightClick(WebElement element) {
+			Actions builder = new Actions(BrowserFactory.getDriver());
+			builder.contextClick(element).perform();            
+		}
 	// method return property value
 	public Boolean getObjectProperty(WebElement element, String propertytype) {
 
