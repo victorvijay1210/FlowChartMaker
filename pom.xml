@@ -169,7 +169,7 @@ https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting --
 
 							<name>dataproviderthreadcount</name>
 
-							<value>2</value>
+							<value>3</value>
 
 						</property>
 
