@@ -2,6 +2,9 @@ package flowchartmaker.pages;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
+
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -88,6 +91,9 @@ public class FlowCharMakerPages {
 	@FindBy(xpath = "//td[normalize-space()='Select All']")
 	public WebElement SelectALL;
 	
+	@FindBy(xpath = "//td[normalize-space()='Select All']")
+	public List<WebElement>SelectALLs;
+	
 	public void clickDecideLater() {
 		bc.objFluentwaitclick(Decidelater, 5, 3);
 		MinimizeBoard();
@@ -140,8 +146,6 @@ public class FlowCharMakerPages {
 	}
 
 	public void deleteFlowchat() throws Exception {
-		
-	
 		bc.actionsRightClick(Dashboard);
 		bc.objFluentwaitclick(SelectALL, 5, 3);
 		bc.objFluentwaitclick(Delete, 5, 3);

@@ -12,7 +12,7 @@ monochrome = true,
 tags ="@Flowchart_TC",
 dryRun =false,
 plugin = { "json:target/cucumber-report-html.json", 
-		"html:target/reports.html",
+		"html:target/cucumber-report-html/reports.html",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "pretty" }
 
 )
